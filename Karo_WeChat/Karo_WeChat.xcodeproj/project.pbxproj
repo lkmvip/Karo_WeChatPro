@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88755890201C17E4006BC469 /* MethodTraceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8875588F201C17E4006BC469 /* MethodTraceConfig.plist */; };
+		88755893201C17E4006BC469 /* put ipa or app here in Resources */ = {isa = PBXBuildFile; fileRef = 88755892201C17E4006BC469 /* put ipa or app here */; };
+		8875589B201C17E5006BC469 /* libKaro_WeChatDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8875589A201C17E5006BC469 /* libKaro_WeChatDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		887558A0201C17E5006BC469 /* Cycript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8875589F201C17E5006BC469 /* Cycript.framework */; };
+		887558A2201C17E5006BC469 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887558A1201C17E5006BC469 /* JavaScriptCore.framework */; };
+		887558A4201C17E5006BC469 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887558A3201C17E5006BC469 /* RevealServer.framework */; };
+		887558A6201C17E5006BC469 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887558A5201C17E5006BC469 /* Foundation.framework */; };
+		887558A8201C17E5006BC469 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887558A7201C17E5006BC469 /* UIKit.framework */; };
+		887558AC201C17E5006BC469 /* ANYMethodLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 887558AB201C17E5006BC469 /* ANYMethodLog.h */; };
+		887558AE201C17E5006BC469 /* ANYMethodLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 887558AD201C17E5006BC469 /* ANYMethodLog.m */; };
+		887558B0201C17E5006BC469 /* MethodTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 887558AF201C17E5006BC469 /* MethodTrace.h */; };
+		887558B2201C17E5006BC469 /* MethodTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 887558B1201C17E5006BC469 /* MethodTrace.m */; };
+		887558B7201C17E5006BC469 /* AntiAntiDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 887558B6201C17E5006BC469 /* AntiAntiDebug.m */; };
+		887558BA201C17E5006BC469 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 887558B9201C17E5006BC469 /* fishhook.c */; };
+		887558BC201C17E5006BC469 /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 887558BB201C17E5006BC469 /* fishhook.h */; };
+		887558BF201C17E5006BC469 /* Karo_WeChatDylib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 887558BE201C17E5006BC469 /* Karo_WeChatDylib.mm */; };
+		887558C1201C17E5006BC469 /* Karo_WeChatDylib.h in Headers */ = {isa = PBXBuildFile; fileRef = 887558C0201C17E5006BC469 /* Karo_WeChatDylib.h */; };
+		887558C3201C17E5006BC469 /* Karo_WeChatDylib.m in Sources */ = {isa = PBXBuildFile; fileRef = 887558C2201C17E5006BC469 /* Karo_WeChatDylib.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8875589C201C17E5006BC469 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88755881201C17E4006BC469 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88755899201C17E5006BC469;
+			remoteInfo = Karo_WeChatDylib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88755889201C17E4006BC469 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8875589B201C17E5006BC469 /* libKaro_WeChatDylib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8875588C201C17E4006BC469 /* Karo_WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Karo_WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8875588F201C17E4006BC469 /* MethodTraceConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MethodTraceConfig.plist; sourceTree = "<group>"; };
+		88755892201C17E4006BC469 /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; name = "put ipa or app here"; path = "TargetApp/put ipa or app here"; sourceTree = "<group>"; };
+		88755894201C17E4006BC469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8875589A201C17E5006BC469 /* libKaro_WeChatDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKaro_WeChatDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8875589F201C17E5006BC469 /* Cycript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cycript.framework; path = Library/Frameworks/Cycript.framework; sourceTree = DEVELOPER_DIR; };
+		887558A1201C17E5006BC469 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		887558A3201C17E5006BC469 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = Library/Frameworks/RevealServer.framework; sourceTree = DEVELOPER_DIR; };
+		887558A5201C17E5006BC469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		887558A7201C17E5006BC469 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		887558AB201C17E5006BC469 /* ANYMethodLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ANYMethodLog.h; path = MethodTrace/ANYMethodLog.h; sourceTree = "<group>"; };
+		887558AD201C17E5006BC469 /* ANYMethodLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ANYMethodLog.m; path = MethodTrace/ANYMethodLog.m; sourceTree = "<group>"; };
+		887558AF201C17E5006BC469 /* MethodTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MethodTrace.h; path = MethodTrace/MethodTrace.h; sourceTree = "<group>"; };
+		887558B1201C17E5006BC469 /* MethodTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MethodTrace.m; path = MethodTrace/MethodTrace.m; sourceTree = "<group>"; };
+		887558B4201C17E5006BC469 /* Karo_WeChatDylib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Karo_WeChatDylib-Prefix.pch"; sourceTree = "<group>"; };
+		887558B6201C17E5006BC469 /* AntiAntiDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AntiAntiDebug.m; path = AntiAntiDebug/AntiAntiDebug.m; sourceTree = "<group>"; };
+		887558B9201C17E5006BC469 /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = fishhook/fishhook.c; sourceTree = "<group>"; };
+		887558BB201C17E5006BC469 /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = fishhook/fishhook.h; sourceTree = "<group>"; };
+		887558BD201C17E5006BC469 /* Karo_WeChatDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Karo_WeChatDylib.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		887558BE201C17E5006BC469 /* Karo_WeChatDylib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Karo_WeChatDylib.mm; sourceTree = "<group>"; };
+		887558C0201C17E5006BC469 /* Karo_WeChatDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Karo_WeChatDylib.h; sourceTree = "<group>"; };
+		887558C2201C17E5006BC469 /* Karo_WeChatDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Karo_WeChatDylib.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88755886201C17E4006BC469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88755897201C17E5006BC469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887558A2201C17E5006BC469 /* JavaScriptCore.framework in Frameworks */,
+				887558A4201C17E5006BC469 /* RevealServer.framework in Frameworks */,
+				887558A0201C17E5006BC469 /* Cycript.framework in Frameworks */,
+				887558A6201C17E5006BC469 /* Foundation.framework in Frameworks */,
+				887558A8201C17E5006BC469 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88755880201C17E4006BC469 = {
+			isa = PBXGroup;
+			children = (
+				8875588E201C17E4006BC469 /* Karo_WeChat */,
+				887558A9201C17E5006BC469 /* Karo_WeChatDylib */,
+				8875589E201C17E5006BC469 /* Frameworks */,
+				8875588D201C17E4006BC469 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8875588D201C17E4006BC469 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8875588C201C17E4006BC469 /* Karo_WeChat.app */,
+				8875589A201C17E5006BC469 /* libKaro_WeChatDylib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8875588E201C17E4006BC469 /* Karo_WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				8875588F201C17E4006BC469 /* MethodTraceConfig.plist */,
+				88755894201C17E4006BC469 /* Info.plist */,
+				88755891201C17E4006BC469 /* TargetApp */,
+			);
+			path = Karo_WeChat;
+			sourceTree = "<group>";
+		};
+		88755891201C17E4006BC469 /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				88755892201C17E4006BC469 /* put ipa or app here */,
+			);
+			name = TargetApp;
+			sourceTree = "<group>";
+		};
+		8875589E201C17E5006BC469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8875589F201C17E5006BC469 /* Cycript.framework */,
+				887558A1201C17E5006BC469 /* JavaScriptCore.framework */,
+				887558A3201C17E5006BC469 /* RevealServer.framework */,
+				887558A5201C17E5006BC469 /* Foundation.framework */,
+				887558A7201C17E5006BC469 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		887558A9201C17E5006BC469 /* Karo_WeChatDylib */ = {
+			isa = PBXGroup;
+			children = (
+				887558BD201C17E5006BC469 /* Karo_WeChatDylib.xm */,
+				887558BE201C17E5006BC469 /* Karo_WeChatDylib.mm */,
+				887558C0201C17E5006BC469 /* Karo_WeChatDylib.h */,
+				887558C2201C17E5006BC469 /* Karo_WeChatDylib.m */,
+				887558AA201C17E5006BC469 /* MethodTrace */,
+				887558B5201C17E5006BC469 /* AntiAntiDebug */,
+				887558B8201C17E5006BC469 /* fishhook */,
+				887558B3201C17E5006BC469 /* Supporting Files */,
+			);
+			path = Karo_WeChatDylib;
+			sourceTree = "<group>";
+		};
+		887558AA201C17E5006BC469 /* MethodTrace */ = {
+			isa = PBXGroup;
+			children = (
+				887558AB201C17E5006BC469 /* ANYMethodLog.h */,
+				887558AD201C17E5006BC469 /* ANYMethodLog.m */,
+				887558AF201C17E5006BC469 /* MethodTrace.h */,
+				887558B1201C17E5006BC469 /* MethodTrace.m */,
+			);
+			name = MethodTrace;
+			sourceTree = "<group>";
+		};
+		887558B3201C17E5006BC469 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				887558B4201C17E5006BC469 /* Karo_WeChatDylib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		887558B5201C17E5006BC469 /* AntiAntiDebug */ = {
+			isa = PBXGroup;
+			children = (
+				887558B6201C17E5006BC469 /* AntiAntiDebug.m */,
+			);
+			name = AntiAntiDebug;
+			sourceTree = "<group>";
+		};
+		887558B8201C17E5006BC469 /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				887558B9201C17E5006BC469 /* fishhook.c */,
+				887558BB201C17E5006BC469 /* fishhook.h */,
+			);
+			name = fishhook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		88755898201C17E5006BC469 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887558C1201C17E5006BC469 /* Karo_WeChatDylib.h in Headers */,
+				887558AC201C17E5006BC469 /* ANYMethodLog.h in Headers */,
+				887558B0201C17E5006BC469 /* MethodTrace.h in Headers */,
+				887558BC201C17E5006BC469 /* fishhook.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8875588B201C17E4006BC469 /* Karo_WeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887558C9201C17E5006BC469 /* Build configuration list for PBXNativeTarget "Karo_WeChat" */;
+			buildPhases = (
+				88755885201C17E4006BC469 /* Sources */,
+				88755886201C17E4006BC469 /* Frameworks */,
+				88755887201C17E4006BC469 /* ShellScript */,
+				88755888201C17E4006BC469 /* Resources */,
+				88755889201C17E4006BC469 /* CopyFiles */,
+				8875588A201C17E4006BC469 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8875589D201C17E5006BC469 /* PBXTargetDependency */,
+			);
+			name = Karo_WeChat;
+			productName = Karo_WeChat;
+			productReference = 8875588C201C17E4006BC469 /* Karo_WeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88755899201C17E5006BC469 /* Karo_WeChatDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 887558C6201C17E5006BC469 /* Build configuration list for PBXNativeTarget "Karo_WeChatDylib" */;
+			buildPhases = (
+				88755895201C17E5006BC469 /* ShellScript */,
+				88755896201C17E5006BC469 /* Sources */,
+				88755897201C17E5006BC469 /* Frameworks */,
+				88755898201C17E5006BC469 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Karo_WeChatDylib;
+			productName = Karo_WeChatDylib;
+			productReference = 8875589A201C17E5006BC469 /* libKaro_WeChatDylib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88755881201C17E4006BC469 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Karo;
+				TargetAttributes = {
+					8875588B201C17E4006BC469 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					88755899201C17E5006BC469 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 88755884201C17E4006BC469 /* Build configuration list for PBXProject "Karo_WeChat" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88755880201C17E4006BC469;
+			productRefGroup = 8875588D201C17E4006BC469 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8875588B201C17E4006BC469 /* Karo_WeChat */,
+				88755899201C17E5006BC469 /* Karo_WeChatDylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88755888201C17E4006BC469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88755893201C17E4006BC469 /* put ipa or app here in Resources */,
+				88755890201C17E4006BC469 /* MethodTraceConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88755887201C17E4006BC469 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/pack.sh;
+		};
+		8875588A201C17E4006BC469 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/Tools/pack.sh codesign";
+		};
+		88755895201C17E5006BC469 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88755885201C17E4006BC469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88755896201C17E5006BC469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887558B7201C17E5006BC469 /* AntiAntiDebug.m in Sources */,
+				887558C3201C17E5006BC469 /* Karo_WeChatDylib.m in Sources */,
+				887558B2201C17E5006BC469 /* MethodTrace.m in Sources */,
+				887558BA201C17E5006BC469 /* fishhook.c in Sources */,
+				887558AE201C17E5006BC469 /* ANYMethodLog.m in Sources */,
+				887558BF201C17E5006BC469 /* Karo_WeChatDylib.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8875589D201C17E5006BC469 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88755899201C17E5006BC469 /* Karo_WeChatDylib */;
+			targetProxy = 8875589C201C17E5006BC469 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		887558C4201C17E5006BC469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		887558C5201C17E5006BC469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		887558C7201C17E5006BC469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V87H9P7AB7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Karo_WeChatDylib/Karo_WeChatDylib-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libKaro_WeChatDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"Karo_WeChatDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		887558C8201C17E5006BC469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = V87H9P7AB7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Karo_WeChatDylib/Karo_WeChatDylib-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libKaro_WeChatDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"Karo_WeChatDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-lsubstrate",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		887558CA201C17E5006BC469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V87H9P7AB7;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = Karo_WeChat/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Private.WeChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		887558CB201C17E5006BC469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V87H9P7AB7;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = Karo_WeChat/Info.plist;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = net.Private.WeChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88755884201C17E4006BC469 /* Build configuration list for PBXProject "Karo_WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887558C4201C17E5006BC469 /* Debug */,
+				887558C5201C17E5006BC469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		887558C6201C17E5006BC469 /* Build configuration list for PBXNativeTarget "Karo_WeChatDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887558C7201C17E5006BC469 /* Debug */,
+				887558C8201C17E5006BC469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		887558C9201C17E5006BC469 /* Build configuration list for PBXNativeTarget "Karo_WeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				887558CA201C17E5006BC469 /* Debug */,
+				887558CB201C17E5006BC469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88755881201C17E4006BC469 /* Project object */;
+}
