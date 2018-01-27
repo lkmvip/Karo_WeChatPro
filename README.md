@@ -1,10 +1,16 @@
 # Karo_WeChat	
 
+### 事先说明：	
+
+仅供参考，个人记录所学所用。
+
 代码相关：[TK](https://github.com/TKkk-iOSer)、[锅神](https://github.com/buginux)
 
 相关作用：抢红包、群助手等。参考TK和锅神的库便可知道。
 
-使用方式：一个砸壳的微信ipa
+前提： 需要一个砸壳的微信ipa
+
+使用方式：
 
 cd 到工程目录的Make执行得到WeChatPro.dylib动态链接库
 
@@ -97,3 +103,4 @@ $ autoInsertDylib.sh文件的目录 ipa文件路径  dylib文件路径 即可获
 
 
 #### 最后将生成好的ipa进行安装。可以使用pp助手或者xcode。
+
