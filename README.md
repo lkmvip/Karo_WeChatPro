@@ -2,7 +2,7 @@
 
 ### 事先说明：	
 
-仅供参考，个人记录所学所用。
+仅供参考，个人记录。
 
 代码相关：[TK](https://github.com/TKkk-iOSer)、[锅神](https://github.com/buginux)
 
