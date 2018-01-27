@@ -8,6 +8,7 @@
 
 #import "TKEditViewController.h"
 #import "TKRobotConfig.h"
+
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "TKToast.h"
@@ -29,8 +30,43 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 @class MMTableViewInfo;
 
 #pragma mark - MODEL
+@interface WCBizUtil : NSObject
+
++ (id)dictionaryWithDecodedComponets:(id)arg1 separator:(id)arg2;
+
+@end
+
+@interface SKBuiltinBuffer_t : NSObject
+
+@property(retain, nonatomic) NSData *buffer; // @dynamic buffer;
+
+@end
+
+@interface WCPayInfoItem: NSObject
+
+@property(retain, nonatomic) NSString *m_c2cNativeUrl;
+
+@end
 
 @interface CMessageWrap : NSObject
+@property (retain, nonatomic) WCPayInfoItem *m_oWCPayInfoItem;
+@property (assign, nonatomic) NSUInteger m_uiMesLocalID;
+@property (retain, nonatomic) NSString *m_nsDesc;
+@property (retain, nonatomic) NSString *m_nsAppExtInfo;
+@property (assign, nonatomic) NSUInteger m_uiAppDataSize;
+@property (assign, nonatomic) NSUInteger m_uiAppMsgInnerType;
+@property (retain, nonatomic) NSString *m_nsShareOpenUrl;
+@property (retain, nonatomic) NSString *m_nsShareOriginUrl;
+@property (retain, nonatomic) NSString *m_nsJsAppId;
+@property (retain, nonatomic) NSString *m_nsPrePublishId;
+@property (retain, nonatomic) NSString *m_nsAppID;
+@property (retain, nonatomic) NSString *m_nsAppName;
+@property (retain, nonatomic) NSString *m_nsThumbUrl;
+@property (retain, nonatomic) NSString *m_nsAppMediaUrl;
+@property (retain, nonatomic) NSData *m_dtThumbnail;
+@property (retain, nonatomic) NSString *m_nsTitle;
+@property (retain, nonatomic) NSString *m_nsMsgSource;
+
 @property(nonatomic, assign) NSInteger m_uiGameType;  // 1、猜拳; 2、骰子; 0、自定义表情
 @property(nonatomic, assign) unsigned long m_uiGameContent;
 @property(nonatomic, strong) NSString *m_nsEmoticonMD5;
@@ -44,7 +80,9 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 @property (nonatomic, assign) int m_uiMessageType;                       // 消息类型
 @property (nonatomic, copy) NSString *m_nsRealChatUsr;
 @property (nonatomic, copy) NSString *m_nsPushContent;
+
 - (id)initWithMsgType:(long long)arg1;
++ (_Bool)isSenderFromMsgWrap:(id)arg1;
 @end
 
 @interface CBaseContact : NSObject
@@ -59,6 +97,9 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 @property (nonatomic, copy) NSString *m_nsNickName;                     // 用户昵称
 @property (nonatomic, copy) NSString *m_nsUsrName;                      // 微信id
 @property (nonatomic, copy) NSString *m_nsMemberName;
+@property(retain, nonatomic) NSString *m_nsHeadImgUrl;
+- (id)getContactDisplayName;
+
 @end
 
 @interface CPushContact : CContact
@@ -109,11 +150,16 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 @end
 
 @interface ContactsDataLogic : NSObject
+@property(nonatomic) unsigned int m_uiScene; // @synthesize m_uiScene;
 - (id)getKeysArray;
 - (BOOL)reloadContacts;
 - (BOOL)hasHistoryGroupContacts;
 - (id)getContactsArrayWith:(id)arg1;
 - (id)initWithScene:(unsigned int)arg1 delegate:(id)arg2 sort:(BOOL)arg3;
+@end
+
+@interface MMUINavigationController : UINavigationController
+
 @end
 
 @interface SKBuiltinString_t : NSObject
@@ -161,11 +207,20 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 - (id)getSelfContact;
 - (id)getContactByName:(id)arg1;
 - (id)getContactList:(unsigned int)arg1 contactType:(unsigned int)arg2;
+- (id)getContactForSearchByName:(id)arg1;
+
+- (_Bool)getContactsFromServer:(id)arg1;
+- (_Bool)isInContactList:(id)arg1;
+- (_Bool)addLocalContact:(id)arg1 listType:(unsigned int)arg2;
 @end
 
 @interface MMServiceCenter : NSObject
 + (instancetype)defaultCenter;
 - (id)getService:(Class)service;
+@end
+
+@interface MMLanguageMgr: NSObject
+- (id)getStringForCurLanguage:(id)arg1 defaultTo:(id)arg2;
 @end
 
 @interface CGroupMgr : NSObject
@@ -177,12 +232,44 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 #pragma mark - ViewController
 
 @interface MMUIViewController : UIViewController
+
+- (void)startLoadingBlocked;
+- (void)startLoadingNonBlock;
+- (void)startLoadingWithText:(NSString *)text;
+- (void)stopLoading;
+- (void)stopLoadingWithFailText:(NSString *)text;
+- (void)stopLoadingWithOKText:(NSString *)text;
+
 @end
 
 @interface NewSettingViewController: MMUIViewController
 
 @property(nonatomic, strong) MMTableViewInfo *m_tableViewInfo; //
 - (void)reloadTableData;
+@end
+
+@interface ContactInfoViewController : MMUIViewController
+
+@property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
+
+@end
+
+@protocol MultiSelectContactsViewControllerDelegate <NSObject>
+- (void)onMultiSelectContactReturn:(NSArray *)arg1;
+
+@optional
+- (int)getFTSCommonScene;
+- (void)onMultiSelectContactCancelForSns;
+- (void)onMultiSelectContactReturnForSns:(NSArray *)arg1;
+@end
+
+@interface MultiSelectContactsViewController : UIViewController
+
+@property(nonatomic) _Bool m_bKeepCurViewAfterSelect; // @synthesize m_bKeepCurViewAfterSelect=_m_bKeepCurViewAfterSelect;
+@property(nonatomic) unsigned int m_uiGroupScene; // @synthesize m_uiGroupScene;
+
+@property(nonatomic, weak) id <MultiSelectContactsViewControllerDelegate> m_delegate; // @synthesize m_delegate;
+
 @end
 
 @interface SayHelloViewController : UIViewController
@@ -259,10 +346,65 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 - (void)initSearchBar;
 - (void)initData:(unsigned int)arg1;
 - (void)makeGroupCell:(id)arg1 head:(id)arg2 title:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2;
 - (void)addSelect:(id)arg1;
 @end
 
+@protocol ContactSelectViewDelegate <NSObject>
+
+- (void)onSelectContact:(CContact *)arg1;
+
+@end
+
+#pragma mark - RedEnvelop
+@interface WCRedEnvelopesControlData : NSObject
+@property(retain, nonatomic) CMessageWrap *m_oSelectedMessageWrap;
+@end
+
+@interface WCRedEnvelopesLogicMgr: NSObject
+
+- (void)OpenRedEnvelopesRequest:(id)params;
+- (void)ReceiverQueryRedEnvelopesRequest:(id)arg1;
+- (void)GetHongbaoBusinessRequest:(id)arg1 CMDID:(unsigned int)arg2 OutputType:(unsigned int)arg3;
+/** Added Methods */
+- (unsigned int)calculateDelaySeconds;
+@end
+
+@interface HongBaoRes : NSObject
+@property(retain, nonatomic) SKBuiltinBuffer_t *retText; // @dynamic retText;
+@property(nonatomic) int cgiCmdid; // @dynamic cgiCmdid;
+@end
+
+@interface HongBaoReq : NSObject
+@property(retain, nonatomic) SKBuiltinBuffer_t *reqText; // @dynamic reqText;
+@end
 #pragma mark - UICategory
+
+@interface NSMutableDictionary (SafeInsert)
+
+- (void)safeSetObject:(id)arg1 forKey:(id)arg2;
+
+@end
+
+@interface NSDictionary (NSDictionary_SafeJSON)
+
+- (id)arrayForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1;
+- (double)doubleForKey:(id)arg1;
+- (float)floatForKey:(id)arg1;
+- (long long)int64ForKey:(id)arg1;
+- (long long)integerForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
+
+@end
+
+@interface NSString (NSString_SBJSON)
+
+- (id)JSONArray;
+- (id)JSONDictionary;
+- (id)JSONValue;
+
+@end
 
 @interface UINavigationController (LogicController)
 - (void)PushViewController:(id)arg1 animated:(BOOL)arg2;

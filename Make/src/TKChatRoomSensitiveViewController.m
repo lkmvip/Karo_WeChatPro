@@ -38,6 +38,7 @@
     [self initData];
     [self reloadTableData];
     [self initTitle];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     MMTableView *tableView = [self.tableViewInfo getTableView];
 
     [self.view addSubview:tableView];
